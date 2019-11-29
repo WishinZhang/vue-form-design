@@ -4,7 +4,7 @@
 
 <script>
   export default {
-    name: "PreviewForm"
+    name: "GenerateCode"
   };
 </script>
 

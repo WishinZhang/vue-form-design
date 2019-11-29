@@ -1,20 +1,12 @@
 <template>
   <div :class="$style['prop-config-wrapper']">
-    <header :class="$style['prop-config-title']">组件属性</header>
-    <div :class="$style['component-props']">
-      <div :class="$style['component-name']"></div>
-      <dynamic-form :class="$style['prop-list']" :data="formData" v-model="formModel"></dynamic-form>
-    </div>
+    
   </div>
 </template>
 
 <script>
-  import DynamicForm from './DynamicForm/DynamicForm.vue';
-  import { getComponentProps } from './getComponentProps.js';
-
   export default {
-    name: "PropsConfig",
-    components: { DynamicForm },
+    name: "InputPropsConfig",
     props: {
       propList: {
         validate(value) {
@@ -32,23 +24,10 @@
       }
     },
     created() {
-      const props = getComponentProps();
-      const model = {};
-      const data = [];
-      for (const prop of props) {
-        if (prop.name) {
-          model[prop.name] = prop.value;
-          data.push(prop);
-        }
-      }
-      this.formData = data;
-      this.formModel = model;
+      
     },
     methods: {
-      handleEvent(event) {
-        // 处理事件
-        console.log(event);
-      }
+      
     }
   };
 </script>

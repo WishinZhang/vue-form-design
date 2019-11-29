@@ -1,0 +1,142 @@
+{
+  "id": "1513443",
+  "name": "vue-form-design",
+  "font_family": "iconfont",
+  "css_prefix_text": "vfd-",
+  "description": "表单设计器图标库",
+  "glyphs": [
+    {
+      "icon_id": "310724",
+      "name": "move",
+      "font_class": "move",
+      "unicode": "e66a",
+      "unicode_decimal": 58986
+    },
+    {
+      "icon_id": "695589",
+      "name": "日期",
+      "font_class": "date",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    },
+    {
+      "icon_id": "741065",
+      "name": "预览",
+      "font_class": "preview",
+      "unicode": "e852",
+      "unicode_decimal": 59474
+    },
+    {
+      "icon_id": "755555",
+      "name": "清空",
+      "font_class": "delete",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "1120965",
+      "name": "多选框",
+      "font_class": "checkbox",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "1197077",
+      "name": "switch-6",
+      "font_class": "switch",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "2471404",
+      "name": "栅格",
+      "font_class": "grid",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "2570096",
+      "name": "导入",
+      "font_class": "import",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "2570098",
+      "name": "导出",
+      "font_class": "export",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    },
+    {
+      "icon_id": "4448571",
+      "name": "radio-checked",
+      "font_class": "radio",
+      "unicode": "e683",
+      "unicode_decimal": 59011
+    },
+    {
+      "icon_id": "5286696",
+      "name": "时间",
+      "font_class": "time",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    },
+    {
+      "icon_id": "5450378",
+      "name": "card",
+      "font_class": "form-group",
+      "unicode": "e784",
+      "unicode_decimal": 59268
+    },
+    {
+      "icon_id": "5881149",
+      "name": "符号-数字输入框",
+      "font_class": "input-number",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "6664173",
+      "name": "input",
+      "font_class": "input",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "6664211",
+      "name": "textarea",
+      "font_class": "textarea",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "6879701",
+      "name": "滑块-01",
+      "font_class": "slider",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "7275369",
+      "name": "Layout",
+      "font_class": "layout",
+      "unicode": "e68e",
+      "unicode_decimal": 59022
+    },
+    {
+      "icon_id": "8560318",
+      "name": "下拉框",
+      "font_class": "select",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "10721286",
+      "name": "分组",
+      "font_class": "copy",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    }
+  ]
+}

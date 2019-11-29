@@ -1,31 +1,41 @@
 <template>
-  <div class="box">
-    <header class="header">
-      <div class="logo">
+  <div :class="$style.box">
+    <header :class="$style.header">
+      <div :class="$style.logo">
         <h4>表单设计器</h4>
       </div>
     </header>
-    <div class="main">
-      <div class="left"></div>
-      <div class="center"></div>
-      <div class="right"></div>
+    <div :class="$style.main">
+      <div :class="$style.left">
+        <WidgetList></WidgetList>
+      </div>
+      <div :class="$style.center">
+        <Center></Center>
+      </div>
+      <div :class="$style.right">
+        <PropsConfig></PropsConfig>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
+  import Center from "@/views/Center.vue";
+  import WidgetList from "@component/WidgetList.vue";
+  import PropsConfig from "@component/PropsConfig.vue";
 
-export default {
-  name: "home",
-  // components: {
-  //   HelloWorld
-  // }
-};
+  export default {
+    name: "Home",
+    components: { Center, WidgetList, PropsConfig },
+    data() {
+      return {
+        list: []
+      };
+    }
+  };
 </script>
 
-<style lang="less">
+<style lang="less" module>
   .box {
     width: 100%;
     height: 100%;

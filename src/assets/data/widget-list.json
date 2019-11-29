@@ -1,0 +1,71 @@
+{
+  "form": [
+    {
+      "name": "input",
+      "title": "输入框",
+      "icon": "iconfont vfd-input"
+    },
+    {
+      "name": "textarea",
+      "title": "文本框",
+      "icon": "iconfont vfd-textarea"
+    },
+    {
+      "name": "input-number",
+      "title": "数字输入框",
+      "icon": "iconfont vfd-input-number"
+    },
+    {
+      "name": "radio",
+      "title": "单选框",
+      "icon": "iconfont vfd-radio"
+    },
+    {
+      "name": "checkbox",
+      "title": "多选框",
+      "icon": "iconfont vfd-checkbox"
+    },
+    {
+      "name": "select",
+      "title": "下拉选择器",
+      "icon": "iconfont vfd-select"
+    },
+    {
+      "name": "datepicker",
+      "title": "日期选择器",
+      "icon": "iconfont vfd-date"
+    },
+    {
+      "name": "timepicker",
+      "title": "时间选择器",
+      "icon": "iconfont vfd-time"
+    },
+    {
+      "name": "switch",
+      "title": "开关",
+      "icon": "iconfont vfd-switch"
+    },
+    {
+      "name": "slider",
+      "title": "滑块",
+      "icon": "iconfont vfd-slider"
+    }
+  ],
+  "layout": [
+    {
+      "name": "grid",
+      "title": "栅格布局",
+      "icon": "iconfont vfd-grid"
+    },
+    {
+      "name": "flex",
+      "title": "弹性布局",
+      "icon": "iconfont vfd-layout"
+    },
+    {
+      "name": "form-group",
+      "title": "表单组",
+      "icon": "iconfont vfd-form-group"
+    }
+  ]
+}
