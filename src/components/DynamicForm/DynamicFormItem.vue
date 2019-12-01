@@ -71,29 +71,36 @@
     <template v-if="data.type == 'select'">
       <el-select
         v-model="currentValue"
-        :disabled="data.disabled"
         :multiple="data.multiple"
-        :clearable="data.clearable"
+        :multiple-limit="data.multipleLimit"
         :placeholder="data.placeholder"
-        :style="{ width: data.width }"
+        :clearable="data.clearable"
+        :disabled="data.disabled"
+        :style="data.style"
+        :class="data.class"
+        @focus="handleEvent('focus', $event)"
+        @blur="handleEvent('blur', $event)"
+        @change="handleEvent('change', $event)"
       >
         <el-option
           v-for="item in data.options"
           :key="item.value"
           :value="item.value"
-          :label="data.showLabel ? item.label : item.value"
+          :label="item.label"
+          @click.native="handleEvent('select', $event)"
         ></el-option>
       </el-select>
     </template>
     <template v-if="data.type == 'radio'">
       <el-radio-group
         v-model="currentValue"
-        :style="{ width: data.width }"
         :disabled="data.disabled"
+        :style="data.style"
+        :class="data.class"
+        @change="handleEvent('change', $event)"
       >
         <el-radio
           v-for="item in data.options"
-          :style="{display: data.inline === false ? 'block' : 'inline-block'}"
           :label="item.value"
           :key="item.value"
         >
@@ -101,16 +108,16 @@
         </el-radio>
       </el-radio-group>
     </template>
-
     <template v-if="data.type == 'checkbox'">
       <el-checkbox-group
-        v-model="data.defaultValue"
-        :style="{ width: data.width }"
+        v-model="currentValue"
         :disabled="data.disabled"
+        :style="data.style"
+        :class="data.class"
+        @change="handleEvent('change', $event)"
       >
         <el-checkbox
           v-for="item in data.options"
-          :style="{display: data.inline ? 'inline-block' : 'block'}"
           :label="item.value"
           :key="item.label"
         >
@@ -118,29 +125,10 @@
         </el-checkbox>
       </el-checkbox-group>
     </template>
-
-    <template v-if="data.type == 'time'">
-      <el-time-picker
-        v-model="data.defaultValue"
-        :is-range="data.isRange"
-        :placeholder="data.placeholder"
-        :start-placeholder="data.startPlaceholder"
-        :end-placeholder="data.endPlaceholder"
-        :readonly="data.readonly"
-        :disabled="data.disabled"
-        :editable="data.editable"
-        :clearable="data.clearable"
-        :arrowControl="data.arrowControl"
-        :style="{ width: data.width }"
-      >
-      </el-time-picker>
-    </template>
-
-    <template v-if="data.type == 'date'">
+    <template v-if="data.type == 'datepicker'">
       <el-date-picker
-        v-model="data.defaultValue"
-        :type="data.type"
-        :is-range="data.isRange"
+        v-model="currentValue"
+        :type="data.dateType"
         :placeholder="data.placeholder"
         :start-placeholder="data.startPlaceholder"
         :end-placeholder="data.endPlaceholder"
@@ -148,52 +136,69 @@
         :disabled="data.disabled"
         :editable="data.editable"
         :clearable="data.clearable"
-        :style="{ width: data.width }"
+        :format="data.format"
+        :style="data.style"
+        :class="data.class"
+        @focus="handleEvent('focus', $event)"
+        @blur="handleEvent('blur', $event)"
+        @change="handleEvent('change', $event)"
       >
       </el-date-picker>
     </template>
-
-    <!-- <template v-if="data.type == 'rate'">
-      <el-rate
-        v-model="data.defaultValue"
-        :max="data.max"
+    <template v-if="data.type == 'timepicker'">
+      <el-time-picker
+        v-model="currentValue"
+        :is-range="data.isRange"
+        :placeholder="data.placeholder"
+        :start-placeholder="data.startPlaceholder"
+        :end-placeholder="data.endPlaceholder"
+        :readonly="data.readonly"
         :disabled="data.disabled"
-        :allow-half="data.allowHalf"
-      ></el-rate>
+        :editable="data.editable"
+        :clearable="data.clearable"
+        :format="data.format"
+        :style="data.style"
+        :class="data.class"
+        @focus="handleEvent('focus', $event)"
+        @blur="handleEvent('blur', $event)"
+        @change="handleEvent('change', $event)"
+      >
+      </el-time-picker>
     </template>
-
     <template v-if="data.type == 'switch'">
       <el-switch
-        v-model="data.defaultValue"
+        v-model="currentValue"
         :disabled="data.disabled"
+        :width="data.width"
+        :active-icon-class="data.activeIcon"
+        :inactive-icon-class="data.inactiveIcon"
+        :active-text="data.activeText"
+        :inactive-text="data.inactiveText"
+        :active-value="data.activeValue"
+        :inactive-value="data.inactiveValue"
+        :active-color="data.activeColor"
+        :inactive-color="data.inactiveColor"
+        :style="data.style"
+        :class="data.class"
+        @change="handleEvent('change', $event)"
       >
       </el-switch>
     </template>
-
     <template v-if="data.type == 'slider'">
       <el-slider
-        v-model="data.defaultValue"
+        v-model="currentValue"
         :min="data.min"
         :max="data.max"
-        :disabled="data.disabled"
         :step="data.step"
-        :show-input="data.showInput"
         :range="data.range"
-        :style="{ width: data.width }"
+        :disabled="data.disabled"
+        :show-stops="data.showStops"
+        :show-tooltip="data.showTooltip"
+        :style="data.style"
+        :class="data.class"
+        @change="handleEvent('change', $event)"
       ></el-slider>
     </template>
-
-    <template v-if="data.type == 'cascader'">
-      <el-cascader
-        v-model="data.defaultValue"
-        :disabled="data.disabled"
-        :clearable="data.clearable"
-        :placeholder="data.placeholder"
-        :style="{ width: data.width }"
-        :options="data.remoteOptions"
-      >
-      </el-cascader>
-    </template> -->
   </el-form-item>
 </template>
 
@@ -205,7 +210,9 @@
     mixins: [ Emitter ],
     props: {
       value: {
-        type: [String, Number, Boolean, Array, Object],
+        validator(value) {
+          return value !== undefined;
+        },
         required: true
       },
       data: {

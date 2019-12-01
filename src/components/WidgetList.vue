@@ -12,6 +12,7 @@
       <li
         v-for="item in formWidgets"
         :class="$style['widget-item']"
+        :title="item.title"
         :key="item.name"
       >
         <i :class="item.icon"></i>
@@ -89,6 +90,9 @@
         line-height: 30px;
         padding: 0 5px;
         margin: 4px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         font-size: 14px;
         font-weight: 400;
         color: #616161;

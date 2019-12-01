@@ -87,5 +87,10 @@
         }
       }
     }
+    .container {
+      height: calc(100% - 40px);
+      background: url(../assets/images/alpha.png) repeat;
+      background-color: #ffffff;
+    }
   }
 </style>

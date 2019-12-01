@@ -19,20 +19,20 @@ export function handleComponentProps(data) {
       defaultProps[key] = data[key];
     }
   }
-  // 不同类型的表单要做不同的处理
-  switch (data.type) {
-    case 'input':
-      break;
-    case 'textarea':
-      if (data.minRows && data.maxRows) {
-        data.autosize = {
-          minRows: data.minRows,
-          maxRows: data.maxRows
-        };
-      }
-      break;
-    case 'select':
-      break;
-  }
+  // // 不同类型的表单要做不同的处理
+  // switch (data.type) {
+  //   case 'input':
+  //     break;
+  //   case 'textarea':
+  //     if (data.minRows && data.maxRows) {
+  //       data.autosize = {
+  //         minRows: data.minRows,
+  //         maxRows: data.maxRows
+  //       };
+  //     }
+  //     break;
+  //   case 'select':
+  //     break;
+  // }
   return defaultProps;
 }
