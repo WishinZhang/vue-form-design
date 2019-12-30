@@ -1,15 +1,18 @@
 <template>
-  <div class="box"></div>
+  <div class="wrap"></div>
 </template>
 
 <script>
 export default {
-  name: 'DesignContainer'
+  name: 'Page',
+  data() {
+    return {};
+  }
 };
 </script>
 
-<style module lang="less">
-.box {
+<style>
+.wrap {
   width: auto;
 }
 </style>

@@ -99,11 +99,7 @@
         :class="data.class"
         @change="handleEvent('change', $event)"
       >
-        <el-radio
-          v-for="item in data.options"
-          :label="item.value"
-          :key="item.value"
-        >
+        <el-radio v-for="item in data.options" :label="item.value" :key="item.value">
           {{ item.label }}
         </el-radio>
       </el-radio-group>
@@ -116,11 +112,7 @@
         :class="data.class"
         @change="handleEvent('change', $event)"
       >
-        <el-checkbox
-          v-for="item in data.options"
-          :label="item.value"
-          :key="item.label"
-        >
+        <el-checkbox v-for="item in data.options" :label="item.value" :key="item.label">
           {{ item.label }}
         </el-checkbox>
       </el-checkbox-group>
@@ -203,62 +195,64 @@
 </template>
 
 <script>
-  import Emitter from '../../utils/emitter.js';
+import Emitter from '../../utils/emitter.js';
 
-  export default {
-    name: "DynamicFormItem",
-    mixins: [ Emitter ],
-    props: {
-      value: {
-        validator(value) {
-          return value !== undefined;
-        },
-        required: true
+export default {
+  name: 'DynamicFormItem',
+  mixins: [Emitter],
+  props: {
+    value: {
+      validator(value) {
+        return value !== undefined;
       },
-      data: {
-        type: Object,
-        required: true,
-        default() {
-          return {}
-        }
-      }
+      required: true
     },
-    data() {
-      return {
-        currentValue: this.value
+    data: {
+      type: Object,
+      required: true,
+      default() {
+        return {};
       }
+    }
+  },
+  data() {
+    return {
+      currentValue: this.value
+    };
+  },
+  watch: {
+    value(value) {
+      this.currentValue = value;
     },
-    watch: {
-      value(value) {
-        this.currentValue = value;
-      },
-      currentValue(value) {
-        this.$emit('input', value);
-      }
-    },
-    methods: {
-      handleEvent(type, event) {
-        // 处理事件
-        const eventData = {
-          context: this,
-          value: this.currentValue,
-          type: type,
-          handle: '',
-          event: event
-        };
-        if (this.data.on && this.data.on.length > 0) {
-          for (const item of this.data.on) {
-            if (item.type === type) {
-              eventData.handle = item.name;
-              this.dispatch('DynamicForm', 'on-dynamic-form-item-event', eventData);
-            }
+    currentValue(value) {
+      this.$emit('input', value);
+    }
+  },
+  methods: {
+    handleEvent(type, event) {
+      // 处理事件
+      const eventData = {
+        context: this,
+        value: this.currentValue,
+        type: type,
+        handle: '',
+        event: event
+      };
+      if (this.data.on && this.data.on.length > 0) {
+        for (const item of this.data.on) {
+          if (item.type === type) {
+            eventData.handle = item.name;
+            this.dispatch('DynamicForm', 'on-dynamic-form-item-event', eventData);
           }
         }
       }
     }
-  };
+  }
+};
 </script>
 
 <style lang="less">
-  
+.element-dynamic-item {
+  width: auto;
+}
 </style>

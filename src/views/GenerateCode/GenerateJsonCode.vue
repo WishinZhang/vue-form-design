@@ -3,12 +3,13 @@
 </template>
 
 <script>
-  export default {
-    name: "GenerateCode"
-  };
+export default {
+  name: 'GenerateCode'
+};
 </script>
 
 <style module lang="less">
-  .box {
-  }
+.box {
+  width: auto;
+}
 </style>

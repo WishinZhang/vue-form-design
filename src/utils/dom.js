@@ -184,7 +184,6 @@ export function scrollLeft(el, from = 0, to = 0, duration = 500, endCallback) {
   scroll(from, to);
 }
 
-
 /**
  * @desc 获取元素距离页面top、right、bottom、left的大小
  * @param {HTMLElement} el

@@ -17,9 +17,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "labelWidth": null,
-    "class": "",
-    "style": {}
+    "class": ""
   },
   {
     "type": "textarea",
@@ -39,9 +37,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "labelWidth": null,
-    "class": "",
-    "style": {}
+    "class": ""
   },
   {
 
@@ -61,9 +57,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "labelWidth": null,
-    "class": "",
-    "style": {}
+    "class": ""
   },
   {
     "type": "select",
@@ -83,9 +77,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "class": "",
-    "style": {},
-    "labelWidth": ""
+    "class": ""
   },
   {
     "type": "radio",
@@ -101,9 +93,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "class": "",
-    "style": {},
-    "labelWidth": ""
+    "class": ""
   },
   {
     "type": "checkbox",
@@ -123,9 +113,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "class": "",
-    "style": {},
-    "labelWidth": ""
+    "class": ""
   },
   {
     "type": "datepicker",
@@ -146,9 +134,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "class": "",
-    "style": {},
-    "labelWidth": ""
+    "class": ""
   },
   {
     "type": "timepicker",
@@ -169,9 +155,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "class": "",
-    "style": {},
-    "labelWidth": ""
+    "class": ""
   },
   {
     "type": "switch",
@@ -191,9 +175,7 @@
     "on": [],
     "rule": [],
     "show": true,
-    "class": "",
-    "style": {},
-    "labelWidth": ""
+    "class": ""
   },
   {
     "type": "slider",
@@ -211,8 +193,6 @@
     "on": [],
     "rule": [],
     "show": true,
-    "class": "",
-    "style": {},
-    "labelWidth": ""
+    "class": ""
   }
 ]

@@ -27,70 +27,70 @@
 </template>
 
 <script>
-  import DesignContainer from '../components/DesignContainer.vue';
+import DesignContainer from '../components/DesignContainer.vue';
 
-  export default {
-    name: "Center",
-    components: { DesignContainer },
-    data() {
-      return {}
+export default {
+  name: 'Center',
+  components: { DesignContainer },
+  data() {
+    return {};
+  },
+  methods: {
+    handlePreview() {
+      console.log('预览');
     },
-    methods: {
-      handlePreview() {
-        console.log('预览');
-      },
-      handleClear() {
-        console.log('清除');
-      },
-      handleImport() {
-        console.log('导入');
-      },
-      handleExport() {
-        console.log('导出');
-      }
+    handleClear() {
+      console.log('清除');
+    },
+    handleImport() {
+      console.log('导入');
+    },
+    handleExport() {
+      console.log('导出');
     }
-  };
+  }
+};
 </script>
 
 <style module lang="less">
-  .center-wrapper {
-    width: 100%;
-    height: 100%;
-    .navbar {
+.center-wrapper {
+  width: 100%;
+  height: 100%;
+  .navbar {
+    height: 40px;
+    border-bottom: 1px solid #cccccc;
+    .navbar-wrapper {
+      display: flex;
+      width: 100%;
       height: 40px;
-      border-bottom: 1px solid #cccccc;
-      .navbar-wrapper {
-        display: flex;
-        width: 100%;
-        height: 40px;
-        line-height: 40px;
-        padding: 0 6px;
-        margin: 0;
-        list-style: none;
-        .navbar-item {
-          flex: 0 0 auto;
-          height: 30px;
-          line-height: 30px;
-          padding: 0;
-          margin: 5px 6px;
-          font-size: 14px;
-          font-weight: 400;
-          color: #46a6ff;
-          cursor: pointer;
-          i {
-            margin-right: 4px;
-            font-weight: 700;
-          }
-          &:hover {
-            color: #1890ff;
-          }
+      line-height: 40px;
+      padding: 0 6px;
+      margin: 0;
+      list-style: none;
+      .navbar-item {
+        flex: 0 0 auto;
+        height: 30px;
+        line-height: 30px;
+        padding: 0;
+        margin: 5px 6px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #46a6ff;
+        cursor: pointer;
+        i {
+          margin-right: 4px;
+          font-weight: 700;
+        }
+        &:hover {
+          color: #1890ff;
         }
       }
     }
-    .container {
-      height: calc(100% - 40px);
-      background: url(../assets/images/alpha.png) repeat;
-      background-color: #ffffff;
-    }
   }
+  .container {
+    height: calc(100% - 40px);
+    background: url(../assets/images/alpha.png) repeat;
+    background-color: #ffffff;
+  }
+}
 </style>

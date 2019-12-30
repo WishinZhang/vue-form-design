@@ -3,12 +3,13 @@
 </template>
 
 <script>
-  export default {
-    name: "PreviewForm"
-  };
+export default {
+  name: 'PreviewForm'
+};
 </script>
 
 <style module lang="less">
-  .box {
-  }
+.box {
+  width: auto;
+}
 </style>
