@@ -29,10 +29,10 @@ export function isObject(value) {
 }
 
 // 获取全局UUID
-export const getUUID = (function() {
-  let uuid = 0;
-  return function() {
-    return uuid++;
+export const getUUID = (() => {
+  let uuid = 100000;
+  return () => {
+    return Number(`${new Date().getTime()}${uuid++}`).toString(36);
   };
 })();
 

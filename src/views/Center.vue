@@ -21,23 +21,30 @@
       </ul>
     </header>
     <div :class="$style['container']">
-      <DesignContainer></DesignContainer>
+      <Page></Page>
     </div>
+    <el-dialog title="预览" :visible.sync="previewVisible">
+      <Preview></Preview>
+    </el-dialog>
   </div>
 </template>
 
 <script>
-import DesignContainer from '../components/DesignContainer.vue';
+import Page from '@components/Page.vue';
+import Preview from '@views/Preview.vue';
 
 export default {
   name: 'Center',
-  components: { DesignContainer },
+  components: { Page, Preview },
   data() {
-    return {};
+    return {
+      previewVisible: false
+    };
   },
   methods: {
     handlePreview() {
       console.log('预览');
+      this.previewVisible = true;
     },
     handleClear() {
       console.log('清除');
@@ -89,8 +96,13 @@ export default {
   }
   .container {
     height: calc(100% - 40px);
+    padding: 10px;
     background: url(../assets/images/alpha.png) repeat;
     background-color: #ffffff;
+  }
+
+  .container .wrap {
+    background: red;
   }
 }
 </style>

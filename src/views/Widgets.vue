@@ -1,42 +1,52 @@
 <template>
   <div :class="$style['widget-wrapper']">
     <div :class="$style['widget-group']">表单组件</div>
-    <draggable
-      tag="ul"
-      v-model="formWidgets"
-      :class="$style['widget-list']"
-      :group="{ name: 'test', pull: 'clone', put: false }"
-      :sort="false"
-      :clone="handleClone"
-    >
-      <li v-for="item in formWidgets" :class="$style['widget-item']" :title="item.title" :key="item.name">
-        <i :class="item.icon"></i>
-        <span>{{ item.title }}</span>
-      </li>
-    </draggable>
+    <ul :class="$style['widget-list']">
+      <template v-for="item in formWidgets">
+        <li
+          :class="$style['widget-item']"
+          v-draggable="{
+            name: item.name,
+            data: item,
+            isDrop: false,
+            dragstart: handleDragStart
+          }"
+          :key="item.name"
+        >
+          <i :class="item.icon"></i>
+          <span>{{ item.title }}</span>
+        </li>
+      </template>
+    </ul>
     <div :class="$style['widget-group']">布局组件</div>
-    <draggable
-      tag="ul"
-      v-model="layoutWidgets"
-      :class="$style['widget-list']"
-      :group="{ name: 'test', pull: 'clone', put: false }"
-      :sort="false"
-      :clone="handleClone"
-    >
-      <li v-for="item in layoutWidgets" :class="$style['widget-item']" :key="item.name">
-        <i :class="item.icon"></i>
-        <span>{{ item.title }}</span>
-      </li>
-    </draggable>
+    <ul :class="$style['widget-list']">
+      <template v-for="item in layoutWidgets">
+        <li
+          :class="$style['widget-item']"
+          v-draggable="{
+            name: item.name,
+            data: item,
+            isDrop: false,
+            dragstart: handleDragStart
+          }"
+          :key="item.name"
+        >
+          <i :class="item.icon"></i>
+          <span>{{ item.title }}</span>
+        </li>
+      </template>
+    </ul>
   </div>
 </template>
 
 <script>
-import draggable from 'vuedraggable';
-import ListData from '@/assets/data/widget-list.json';
+import CompDefaultProps from '@assets/data/comp-default-props.json';
+import ListData from '@assets/data/widget-list.json';
+import draggable from '@directives/draggable';
+import { getUUID } from '@utils/util';
 export default {
   name: 'WidgetList',
-  components: { draggable },
+  directives: { draggable },
   data() {
     const { form, layout } = ListData;
     return {
@@ -45,8 +55,11 @@ export default {
     };
   },
   methods: {
-    handleClone(data) {
-      console.log(data);
+    handleDragStart(event) {
+      const defaultProps = CompDefaultProps[event.data.name];
+      const componentData = JSON.parse(JSON.stringify(defaultProps ? defaultProps : {}));
+      componentData.id = `component_id_${getUUID()}`;
+      event.setComponentData(componentData);
     }
   }
 };

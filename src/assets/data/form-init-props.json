@@ -1,12 +1,12 @@
-[
-  {
+{
+  "input": {
     "type": "input",
-    "label": "输入框",
-    "name": "input",
+    "label": "",
+    "name": "",
     "inputType": "text",
-    "value": "test",
-    "placeholder": "请输入",
-    "required": true,
+    "value": "",
+    "placeholder": "",
+    "required": false,
     "clearable": false,
     "readonly": false,
     "disabled": false,
@@ -19,12 +19,12 @@
     "show": true,
     "class": ""
   },
-  {
+  "textarea": {
     "type": "textarea",
-    "label": "文本框",
-    "name": "textarea",
-    "value": "文本框",
-    "placeholder": "请输入",
+    "label": "",
+    "name": "",
+    "value": "",
+    "placeholder": "",
     "required": false,
     "readonly": false,
     "disabled": false,
@@ -37,88 +37,77 @@
     "on": [],
     "rule": [],
     "show": true,
-    "class": ""
+    "class": "",
+    "style": {},
+    "labelWidth": ""
   },
-  {
-
+  "input-number": {
     "type": "input-number",
-    "label": "数字输入框",
-    "name": "input-number",
-    "value": 0,
+    "label": "",
+    "name": "",
+    "value": "",
     "placeholder": "",
     "required": false,
     "disabled": false,
-    "min": 0,
-    "max": 100,
+    "min": null,
+    "max": null,
     "step": 1,
     "stepStrictly": false,
-    "precision": 0,
+    "precision": null,
     "controls": true,
     "on": [],
     "rule": [],
     "show": true,
     "class": ""
   },
-  {
+  "select": {
     "type": "select",
-    "label": "下拉框",
-    "name": "select",
-    "value": "item1",
-    "required": true,
+    "label": "",
+    "name": "",
+    "value": "",
+    "required": false,
     "disabled": false,
     "clearable": false,
     "multiple": false,
     "multiple-limit": null,
-    "options": [
-      {"value": "item1", "label": "选项一"},
-      {"value": "item2", "label": "选项二"},
-      {"value": "item3", "label": "选项三"}
-    ],
+    "options": [],
     "on": [],
     "rule": [],
     "show": true,
     "class": ""
   },
-  {
+  "radio": {
     "type": "radio",
-    "label": "单选框",
-    "name": "radio",
-    "value": true,
+    "label": "",
+    "name": "",
+    "value": "",
     "required": false,
     "disabled": false,
-    "options": [
-      {"value": true, "label": "是"},
-      {"value": false, "label": "否"}
-    ],
+    "options": [],
     "on": [],
     "rule": [],
     "show": true,
     "class": ""
   },
-  {
+  "checkbox": {
     "type": "checkbox",
-    "label": "多选框",
-    "name": "checkbox",
-    "value": ["item1"],
+    "label": "",
+    "name": "",
+    "value": [],
     "required": false,
     "disabled": false,
     "min": null,
     "max": null,
-    "options": [
-      {"value": "item1", "label": "选项一"},
-      {"value": "item2", "label": "选项二"},
-      {"value": "item3", "label": "选项三"},
-      {"value": "item4", "label": "选项四"}
-    ],
+    "options": [],
     "on": [],
     "rule": [],
     "show": true,
     "class": ""
   },
-  {
+  "datepicker": {
     "type": "datepicker",
-    "label": "日期选择器",
-    "name": "datepicker",
+    "label": "",
+    "name": "",
     "value": "",
     "dateType": "date",
     "placeholder": "",
@@ -136,10 +125,10 @@
     "show": true,
     "class": ""
   },
-  {
+  "timepicker": {
     "type": "timepicker",
-    "label": "时间选择器",
-    "name": "timepicker",
+    "label": "",
+    "name": "",
     "value": "",
     "isRange": false,
     "placeholder": "",
@@ -157,17 +146,17 @@
     "show": true,
     "class": ""
   },
-  {
+  "switch": {
     "type": "switch",
-    "label": "开关",
-    "name": "switch",
-    "value": false,
-    "width": 50,
+    "label": "",
+    "name": "",
+    "value": "",
+    "width": "",
     "disabled": false,
     "activeIcon": "",
     "inactiveIcon": "",
-    "activeText": "",
-    "inactiveText": "",
+    "activeText": "开",
+    "inactiveText": "关",
     "activeValue": true,
     "inactiveValue": false,
     "activeColor": "",
@@ -177,11 +166,11 @@
     "show": true,
     "class": ""
   },
-  {
+  "slider": {
     "type": "slider",
-    "label": "滑块",
-    "name": "slider",
-    "value": 10,
+    "label": "",
+    "name": "",
+    "value": "",
     "required": false,
     "disabled": false,
     "range": false,
@@ -189,10 +178,54 @@
     "max": 100,
     "step": 1,
     "showStops": false,
-    "showTooltip": false,
+    "showTooltip": true,
+    "on": [],
+    "rule": [],
+    "show": true,
+    "class": ""
+  },
+  "grid": {
+    "type": "grid",
+    "label": "",
+    "name": "",
+    "value": "",
+    "required": false,
+    "disabled": false,
+    "range": false,
+    "showStops": false,
+    "showTooltip": true,
+    "on": [],
+    "rule": [],
+    "show": true,
+    "class": ""
+  },
+  "flex": {
+    "type": "flex",
+    "label": "",
+    "name": "",
+    "value": "",
+    "required": false,
+    "disabled": false,
+    "range": false,
+    "showStops": false,
+    "showTooltip": true,
+    "on": [],
+    "rule": [],
+    "show": true,
+    "class": ""
+  },
+  "form-group": {
+    "type": "form-group",
+    "label": "",
+    "name": "",
+    "value": "",
+    "required": false,
+    "disabled": false,
+    "showStops": false,
+    "showTooltip": true,
     "on": [],
     "rule": [],
     "show": true,
     "class": ""
   }
-]
+}

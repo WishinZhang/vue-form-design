@@ -53,12 +53,17 @@
   ],
   "layout": [
     {
-      "name": "grid",
+      "name": "form",
+      "title": "表单",
+      "icon": "iconfont vfd-biaodan"
+    },
+    {
+      "name": "grid-layout",
       "title": "栅格布局",
       "icon": "iconfont vfd-grid"
     },
     {
-      "name": "flex",
+      "name": "flex-layout",
       "title": "弹性布局",
       "icon": "iconfont vfd-layout"
     },
