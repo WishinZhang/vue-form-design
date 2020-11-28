@@ -4,6 +4,10 @@
       <ul :class="$style['navbar-wrapper']">
         <li :class="$style['navbar-item']" @click="handlePreview">
           <i class="iconfont vfd-preview"></i>
+          <span>组件树</span>
+        </li>
+        <li :class="$style['navbar-item']" @click="handlePreview">
+          <i class="iconfont vfd-preview"></i>
           <span>预览</span>
         </li>
         <li :class="$style['navbar-item']" @click="handleClear">

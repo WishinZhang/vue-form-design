@@ -5,7 +5,7 @@ import { getUUID } from '@utils/util';
  * 指令传入的值必须是一个Boolean值
  * */
 export default {
-  inserted(el, { value: options }) {
+  addEventListener(el, options) {
     const designerBox = createDesignerDom();
     el._designer = designerBox;
     el._designerId = 'designer_id_' + getUUID();
@@ -17,10 +17,7 @@ export default {
     el.addEventListener('click', handleClick);
     console.log(options);
   },
-  // componentUpdated(el, { value: options }) {
-  //   // a
-  // },
-  unbind(el) {
+  removeEventListener(el) {
     el.removeEventListener('mouseenter', handleMouseenter);
     el.removeEventListener('mouseleave', handleMouseleave);
     el.removeEventListener('dragenter', handleDragenter);

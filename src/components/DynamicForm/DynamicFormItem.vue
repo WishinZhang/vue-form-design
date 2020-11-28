@@ -199,6 +199,7 @@ import Emitter from '../../utils/emitter.js';
 
 export default {
   name: 'DynamicFormItem',
+  isDesign: true,
   mixins: [Emitter],
   props: {
     value: {

@@ -8,7 +8,6 @@
   >
     <template v-for="comp in comps">
       <component :is="comp.compName" v-bind="comp.props" :key="comp.id"></component>
-      <!-- <DynamicForm v-if="comp.compName === 'DynamicForm'" v-bind="comp.props" :key="comp.id" /> -->
     </template>
   </div>
 </template>
@@ -28,7 +27,7 @@ export default {
     handleDropComp(event) {
       const comp = event.data.source;
       console.log(comp);
-      if (this.slotValidate(comp)) {
+      if (comp && this.slotValidate(comp)) {
         this.comps.push(event.data.source);
       }
     },

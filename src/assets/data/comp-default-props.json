@@ -193,7 +193,7 @@
     "compName": "DynamicForm",
     "props": {
       "data": [],
-      "labelWidth": "",
+      "labelWidth": "100px",
       "value": {},
       "show": true
     }

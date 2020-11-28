@@ -1,5 +1,5 @@
 /**
- * 该指令用于实现类似 Sortable.js 类似的效果
+ * 该对象用于实现类似 Sortable.js 类似的效果
  * 指令传入的值是一个配置项
  * options:
  *   name: 名称，默认为空
@@ -12,7 +12,7 @@
  *   drop: 拖放，默认为空
  * */
 export default {
-  inserted(el, { value: options }) {
+  addEventListener(el, options) {
     el._options = {
       name: options.name,
       data: options.data,
@@ -35,7 +35,7 @@ export default {
       el.addEventListener('drop', handleDrop);
     }
   },
-  unbind(el) {
+  removeEventListener(el) {
     if (el._options.isDrag === true) {
       el.removeEventListener('dragstart', handleDragstart);
     }
